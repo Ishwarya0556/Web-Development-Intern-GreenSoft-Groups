@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google</title>
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 50px 100px;
+            text-align: center;
+        }
+
+        h2 {
+            background-color: #ffe5ec;
+            color: #0d1b2a;
+            padding: 10px 10px;
+            font-size: 28px;
+            border-radius: 19px;
+            font-weight: bold;
+        }
+
+        p {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 40px;
+            text-align: left;
+            display: inline-block;
+            color: #ffcc00;
+            font-size: 18px;
+        }
+
+        ol {
+            list-style-type: upper-roman;
+            padding-left: 40px;
+            text-align: left;
+            display: inline-block;
+            color: #00ffcc;
+            font-size: 18px;
+        }
+
+        table {
+            margin: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-collapse: collapse;
+            color: white;
+            font-size: 18px;
+            width: 90%;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid white;
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 700px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        input, textarea, select, button {
+            margin-top: 8px;
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid white;
+            font-size: 16px;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        iframe, audio {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        a {
+            color: #00ffff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #444;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #666;
+        }
+
+        img {
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>GOOGLE</h2>
+    <hr>
+    <p><span style="color: #ffcc00;">Google</span> is one of the world’s leading technology companies, founded by <b>Larry Page</b> and <b>Sergey Brin</b> in 1998. It is best known for its search engine, but also offers a wide range of services including <b>Gmail</b>, <b>YouTube</b>, and <b>Google Maps</b>.</p>
+
+    <p><b><span style="color: #00ffcc;">Google</span></b> has grown into a global powerhouse in <u>cloud computing</u>, <u>artificial intelligence</u>, Android development, and smart devices.</p>
+    
+    <img src="https://pngimg.com/uploads/google/google_PNG102344.png" alt="Google Logo Transparent" width="400"/>
+    <p><b>Some of their software services are:</b></p>
+    <ul>
+        <li>Google Search</li>
+        <li>Google Maps</li>
+        <li>Google Chrome</li>
+        <li>Gmail</li>
+    </ul>
+
+    <p><b>Some of their cloud services are:</b></p>
+    <ol>
+        <li>Google Cloud Platform (GCP)</li>
+        <li>Google Drive</li>
+        <li>Google BigQuery</li>
+        <li>Firebase</li>
+    </ol>
+
+    <a name="top"></a>
+    <h2>Student Course Result Records</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Student Name</th>
+            <th>Course</th>
+            <th>Date</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>Ishwarya</td>
+            <td>AI Development</td>
+            <td>2025-07-12</td>
+            <td>Passed</td>
+        </tr>
+        <tr>
+            <td>002</td>
+            <td>Sneha R</td>
+            <td>Web Development</td>
+            <td>2025-07-16</td>
+            <td>Failed</td>
+        </tr>
+    </table>
+    <br><hr>
+
+    <!-- Registration Form -->
+    <h2>Web Development Course Registration Form</h2>
+    <form>
+        Email (Gmail): <input type="email" name="email"><br>
+        Full Name: <input type="text" name="fullname" required><br>
+        Password: <input type="password" name="password" required><br>
+        Age: <input type="number" name="age"><br>
+        Guardian Name: <input type="search" name="guardian"><br>
+        Date of Birth: <input type="date" name="dob"><br>
+        Gender:
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="other"> Other<br><br>
+        Address:<br>
+        <textarea name="address" rows="4" cols="50" placeholder="Enter your full address..."></textarea><br>
+        Phone Number: <input type="tel" name="phone"><br>
+        Skill Level (0–10): <input type="range" name="skill" min="0" max="10"><br>
+        Start Date: <input type="date" name="start_date"><br>
+        Preferred Time: <input type="time" name="preferred_time"><br>
+        GitHub/Portfolio URL: <input type="url" name="portfolio"><br>
+        Available Week: <input type="week" name="available_week"><br>
+        Course Batch:
+        <select name="batch">
+            <option value="morning">Morning</option>
+            <option value="afternoon">Afternoon</option>
+            <option value="evening">Evening</option>
+        </select><br>
+        Upload Bonafide/Proof: <input type="file" name="proof"><br>
+        <input type="checkbox" name="confirm" checked> I confirm the above information is correct<br>
+        <input type="checkbox" name="agree"> I agree to Google's Terms & Conditions<br>
+        <button type="submit">Submit Registration</button>
+    </form>
+    <hr>
+
+    <!-- Video and Audio Section -->
+    <a name="video"></a>
+    <h2>Course Introduction Video</h2>
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/puUPpVrIRkc"
+    title="Google Developers Web Intro" frameborder="0" allowfullscreen></iframe><br><br>
+
+    <h2>Course Audio Sample</h2>
+    <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio><br><br>
+
+    <p><a href="#top">⬆ Back to Top</a></p>
+</body>
+</html>
