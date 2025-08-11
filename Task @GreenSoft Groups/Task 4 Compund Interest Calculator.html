@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compound Interest Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://echo360.com/wp-content/uploads/2020/04/iStock-1170949937.jpg'); 
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 300px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 8px;
+            margin: 8px 0;
+            width: 90%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Compound Interest Calculator</h2>
+        <input type="number" id="principal" placeholder="Enter Principal (₹)" /><br>
+        <input type="number" id="rate" placeholder="Enter Rate (%)" /><br>
+        <input type="number" id="time" placeholder="Enter Time (years)" /><br>
+        <button onclick="calculateCI()">Calculate</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateCI() {
+            let p = parseFloat(document.getElementById("principal").value);
+            let r = parseFloat(document.getElementById("rate").value);
+            let t = parseFloat(document.getElementById("time").value);
+
+            if (isNaN(p) || isNaN(r) || isNaN(t)) {
+                document.getElementById("result").innerText = "Please enter valid numbers.";
+                return;
+            }
+
+            let amount = p * Math.pow((1 + r / 100), t);
+            let ci = amount - p;
+
+            document.getElementById("result").innerHTML = `
+                Compound Interest: ₹${ci.toFixed(2)}<br>
+                Total Amount: ₹${amount.toFixed(2)}
+            `;
+        }
+    </script>
+</body>
+</html>

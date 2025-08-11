@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://tse3.mm.bing.net/th/id/OIP.bk2P7bIgTpU6eFh9ZQjlAwHaE8?rs=1&pid=ImgDetMain&o=7&rm=3'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        table {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="text"] {
+            width: 180px;
+            padding: 6px;
+            font-size: 16px;
+        }
+
+        input[type="button"] {
+            padding: 8px 12px;
+            margin: 5px 3px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Simple Calculator</h2>
+        <table>
+            <tr>
+                <td>Enter First Number:</td>
+                <td><input type="text" id="num1"></td>
+            </tr>
+            <tr>
+                <td>Enter Second Number:</td>
+                <td><input type="text" id="num2"></td>
+            </tr>
+            <tr>
+                <td>Result:</td>
+                <td><input type="text" id="res" readonly="readonly"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="button" value="Add" onclick="btnplus_onclick();"/>
+                    <input type="button" value="Subtract" onclick="btnsub_onclick();"/>
+                    <input type="button" value="Multiply" onclick="btnmul_onclick();"/>
+                    <input type="button" value="Divide" onclick="btndiv_onclick();"/>
+                    <input type="button" value="Modulus" onclick="btnmod_onclick();"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function btnplus_onclick() {
+            var n1 = parseFloat(document.getElementById("num1").value);
+            var n2 = parseFloat(document.getElementById("num2").value);
+            document.getElementById("res").value = n1 + n2;
+        }
+
+        function btnsub_onclick() {
+            var n1 = parseFloat(document.getElementById("num1").value);
+            var n2 = parseFloat(document.getElementById("num2").value);
+            document.getElementById("res").value = n1 - n2;
+        }
+
+        function btnmul_onclick() {
+            var n1 = parseFloat(document.getElementById("num1").value);
+            var n2 = parseFloat(document.getElementById("num2").value);
+            document.getElementById("res").value = n1 * n2;
+        }
+
+        function btndiv_onclick() {
+            var n1 = parseFloat(document.getElementById("num1").value);
+            var n2 = parseFloat(document.getElementById("num2").value);
+            if (n2 === 0) {
+                document.getElementById("res").value = "Cannot divide by zero";
+            } else {
+                document.getElementById("res").value = n1 / n2;
+            }
+        }
+
+        function btnmod_onclick() {
+            var n1 = parseFloat(document.getElementById("num1").value);
+            var n2 = parseFloat(document.getElementById("num2").value);
+            if (n2 === 0) {
+                document.getElementById("res").value = "Cannot modulus by zero";
+            } else {
+                document.getElementById("res").value = n1 % n2;
+            }
+        }
+    </script>
+</body>
+</html>

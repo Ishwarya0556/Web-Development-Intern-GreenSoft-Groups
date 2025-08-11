@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Area Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://img.freepik.com/premium-photo/red-blue-black-3d-geometric-shapes-black-background_36682-202443.jpg');
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .area-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px 40px;
+            text-align: center;
+            border-radius: 10px;
+            width: 350px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #2c3e50;
+        }
+
+        select, input[type="number"], input[readonly] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        input[type="button"] {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #2980b9;
+        }
+
+        .dimensions {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="area-container">
+        <h2>Area Calculator</h2>
+
+        <label for="shape">Select Shape:</label>
+        <select id="shape" onchange="showInputs()">
+            <option value="">--Select--</option>
+            <option value="rectangle">Rectangle</option>
+            <option value="square">Square</option>
+            <option value="triangle">Triangle</option>
+            <option value="circle">Circle</option>
+        </select>
+
+        <div id="inputs" class="dimensions"></div>
+
+        <input type="button" value="Calculate Area" onclick="calculateArea()">
+        <input type="text" id="result" placeholder="Area" readonly>
+    </div>
+
+    <script>
+        function showInputs() {
+            const shape = document.getElementById("shape").value;
+            const inputsDiv = document.getElementById("inputs");
+            inputsDiv.innerHTML = "";
+            inputsDiv.style.display = "block";
+
+            switch (shape) {
+                case "rectangle":
+                    inputsDiv.innerHTML = `
+                        <input type="number" id="length" placeholder="Length">
+                        <input type="number" id="width" placeholder="Width">`;
+                    break;
+                case "square":
+                    inputsDiv.innerHTML = `<input type="number" id="side" placeholder="Side">`;
+                    break;
+                case "triangle":
+                    inputsDiv.innerHTML = `
+                        <input type="number" id="base" placeholder="Base">
+                        <input type="number" id="height" placeholder="Height">`;
+                    break;
+                case "circle":
+                    inputsDiv.innerHTML = `<input type="number" id="radius" placeholder="Radius">`;
+                    break;
+               
+                default:
+                    inputsDiv.style.display = "none";
+            }
+        }
+
+        function calculateArea() {
+            const shape = document.getElementById("shape").value;
+            let area = 0;
+
+            switch (shape) {
+                case "rectangle":
+                    const length = parseFloat(document.getElementById("length").value);
+                    const width = parseFloat(document.getElementById("width").value);
+                    area = length * width;
+                    break;
+                case "square":
+                    const side = parseFloat(document.getElementById("side").value);
+                    area = side * side;
+                    break;
+                case "triangle":
+                    const base = parseFloat(document.getElementById("base").value);
+                    const height = parseFloat(document.getElementById("height").value);
+                    area = 0.5 * base * height;
+                    break;
+                case "circle":
+                    const radius = parseFloat(document.getElementById("radius").value);
+                    area = Math.PI * radius * radius;
+                    break;
+                default:
+                    document.getElementById("result").value = "Select a shape.";
+                    return;
+            }
+
+            if (isNaN(area)) {
+                document.getElementById("result").value = "Invalid input.";
+            } else {
+                document.getElementById("result").value = area.toFixed(2) + " sq units";
+            }
+        }
+    </script>
+</body>
+</html>
